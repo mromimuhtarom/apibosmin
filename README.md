@@ -1,3 +1,12 @@
+<span style="font-size:20px"><b>Nama Kelompok</b></span><br>
+<span style="font-size:14px>1. Muhammad Romi Muhtarom 1731109</span><br>
+<span style="font-size:14px>2. Darryl 1731086</span><br>
+<span style="font-size:14px>3. Franky Chainoor Johari 1731012</span><br>
+<span style="font-size:14px>4. Yolla 1731044</span><br>
+<span style="font-size:14px>5. Hendi 1731029</span><br>
+<span style="font-size:14px>3. Feby Trisna Utama 1731058</span><br>
+
+<hr>
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
