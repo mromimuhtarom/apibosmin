@@ -14,10 +14,11 @@ class WalikelasApiController extends Controller
         $peminjaman = DB::table('peminjaman')
                       ->join('siswa', 'siswa.id_siswa', '=', 'peminjaman.id_siswa')
                       ->join('buku', 'buku.buku_id', '=', 'peminjaman.buku_id')
+                      ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                       ->select(
                           'siswa.nama_siswa',
                           'buku.nama_buku',
-                          'siswa.kelas',
+                          'kelas.nama_kelas as kelas',
                           'peminjaman.*'
                       )
                       ->where('peminjaman.op_id', '=', $op_id)
@@ -30,7 +31,7 @@ class WalikelasApiController extends Controller
     {
         $kelas = $request->kelas;
         $siswa = DB::table('siswa')
-                 ->where('kelas', '=', $kelas)
+                 ->where('id_kelas', '=', $kelas)
                  ->get();
         
         return $siswa;
@@ -57,9 +58,10 @@ class WalikelasApiController extends Controller
         $peminjaman_buku = DB::table('peminjaman')
                       ->join('siswa', 'siswa.id_siswa', '=', 'peminjaman.id_siswa')
                       ->join('buku', 'buku.buku_id', '=', 'peminjaman.buku_id')
+                      ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                       ->select(
                         'siswa.nama_siswa',
-                        'siswa.kelas',
+                        'kelas.nama_kelas as kelas',
                         'buku.nama_buku',
                         'peminjaman.*'
                       );
@@ -125,10 +127,11 @@ class WalikelasApiController extends Controller
         $pengembalian = DB::table('pengembalian')
                       ->join('siswa', 'siswa.id_siswa', '=', 'pengembalian.id_siswa')
                       ->join('buku', 'buku.buku_id', '=', 'pengembalian.buku_id')
+                      ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                       ->select(
                           'siswa.nama_siswa',
                           'buku.nama_buku',
-                          'siswa.kelas',
+                          'kelas.nama_kelas as kelas',
                           'pengembalian.*'
                       )
                       ->where('pengembalian.op_id', '=', $op_id)
@@ -163,9 +166,10 @@ class WalikelasApiController extends Controller
             $pengembalian = DB::table('peminjaman')
                             ->join('siswa', 'siswa.id_siswa', '=', 'peminjaman.id_siswa')
                             ->join('buku', 'buku.buku_id', '=', 'peminjaman.buku_id')
+                            ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                             ->select(
                                 'siswa.nama_siswa',
-                                'siswa.kelas',
+                                'kelas.nama_kelas as kelas',
                                 'buku.nama_buku',
                                 'peminjaman.*'
                             )
@@ -176,9 +180,10 @@ class WalikelasApiController extends Controller
             $pengembalian = DB::table('peminjaman')
                             ->join('siswa', 'siswa.id_siswa', '=', 'peminjaman.id_siswa')
                             ->join('buku', 'buku.buku_id', '=', 'peminjaman.buku_id')
+                            ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                             ->select(
                                 'siswa.nama_siswa',
-                                'siswa.kelas',
+                                'kelas.nama_kelas as kelas',
                                 'buku.nama_buku',
                                 'peminjaman.*'
                             )
@@ -188,9 +193,10 @@ class WalikelasApiController extends Controller
             $pengembalian = DB::table('peminjaman')
                             ->join('siswa', 'siswa.id_siswa', '=', 'peminjaman.id_siswa')
                             ->join('buku', 'buku.buku_id', '=', 'peminjaman.buku_id')
+                            ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                             ->select(
                                 'siswa.nama_siswa',
-                                'siswa.kelas',
+                                'kelas.nama_kelas as kelas',
                                 'buku.nama_buku',
                                 'peminjaman.*'
                             )
@@ -219,10 +225,11 @@ class WalikelasApiController extends Controller
         $pengembalian_buku = DB::table('pengembalian')
                       ->join('siswa', 'siswa.id_siswa', '=', 'pengembalian.id_siswa')
                       ->join('buku', 'buku.buku_id', '=', 'pengembalian.buku_id')
+                      ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                       ->select(
                         'siswa.nama_siswa',
                         'buku.nama_buku',
-                        'siswa.kelas',
+                        'kelas.nama_kelas as kelas',
                         'pengembalian.*'
                       );
         
@@ -287,10 +294,11 @@ class WalikelasApiController extends Controller
         $buku_hilang = DB::table('buku_hilang')
                       ->join('siswa', 'siswa.id_siswa', '=', 'buku_hilang.id_siswa')
                       ->join('buku', 'buku.buku_id', '=', 'buku_hilang.buku_id')
+                      ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                       ->select(
                           'siswa.nama_siswa',
                           'buku.nama_buku',
-                          'siswa.kelas',
+                          'kelas.nama_kelas as kelas',
                           'buku_hilang.*'
                       )
                       ->where('buku_hilang.op_id', '=', $op_id)
@@ -310,10 +318,11 @@ class WalikelasApiController extends Controller
         $buku_hilang = DB::table('buku_hilang')
                       ->join('siswa', 'siswa.id_siswa', '=', 'buku_hilang.id_siswa')
                       ->join('buku', 'buku.buku_id', '=', 'buku_hilang.buku_id')
+                      ->join('kelas', 'kelas.id_kelas', '=', 'siswa.id_kelas')
                       ->select(
                         'siswa.nama_siswa',
                         'buku.nama_buku',
-                        'siswa.kelas',
+                        'kelas.nama_kelas as kelas',
                         'buku_hilang.*'
                       );
         

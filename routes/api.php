@@ -33,3 +33,21 @@ Route::get('/Walikelas/data_bukupengembalian', 'WalikelasApiController@pengembal
 Route::get('/walikelas/bukuhilangview', 'WalikelasApiController@bukuhilangview');
 Route::get('/walikelas/bukuhilangsearch', 'WalikelasApiController@bukuhilangsearch');
 /*--------- EndBuku Hilang --------- */
+
+
+/*--------- Wali kelas --------- */
+Route::get('/perpus/walikelasview', 'PerpusApiController@WalikelasView');
+Route::get('/perpus/walikelassearch', 'PerpusApiController@WalikelasSearch');
+/*--------- End wali kelas --------- */
+
+
+Route::get('/kelas', 'PerpusApiController@kelas');
+/*--------- siswa --------- */
+Route::get('/perpus/siswaview', 'PerpusApiController@siswaview');
+Route::get('/perpus/siswasearch', 'PerpusApiController@siswasearch');
+/*--------- End siswa --------- */
+
+/*--------- Buku --------- */
+Route::get('/perpus/bukuview', 'PerpusApiController@bukuview');
+Route::get('/perpus/bukusearch', 'PerpusApiController@bukusearch');
+/*--------- End Buku --------- */
